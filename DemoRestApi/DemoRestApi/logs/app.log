@@ -1,0 +1,3 @@
+2022-01-29 16:56:45,075 INFO p.m.D.s.UserCSVFileLoader [main] Loading users from CSV file to database...
+2022-01-29 16:56:45,080 INFO p.m.D.s.UserCSVFileLoader [main] Loading CSV file from path src/main/resources/examplefilewitherror.csv
+2022-01-29 16:56:45,203 ERROR p.m.D.s.UserCSVFileLoader [main] Error in file: java.lang.RuntimeException: Error capturing CSV header!
