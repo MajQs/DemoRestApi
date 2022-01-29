@@ -7,5 +7,5 @@ Demo application how to use REST controllers
 - H2 database
 - Lombok
 - JUnit
-- 2Log4j
+- Log4j2
 - OpenCSV
