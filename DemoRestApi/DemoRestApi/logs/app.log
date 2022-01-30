@@ -1,3 +1,8 @@
-2022-01-29 16:56:45,075 INFO p.m.D.s.UserCSVFileLoader [main] Loading users from CSV file to database...
-2022-01-29 16:56:45,080 INFO p.m.D.s.UserCSVFileLoader [main] Loading CSV file from path src/main/resources/examplefilewitherror.csv
-2022-01-29 16:56:45,203 ERROR p.m.D.s.UserCSVFileLoader [main] Error in file: java.lang.RuntimeException: Error capturing CSV header!
+2022-01-30 11:30:09,294 INFO p.m.D.s.UserCSVFileLoader [main] Loading CSV file from path src/main/resources/examplefilewithexceptions.csv
+2022-01-30 11:30:09,450 INFO p.m.D.s.UserCSVFileLoader [main] CSV file loaded successful
+2022-01-30 11:30:09,458 WARN p.m.D.s.UserCSVFileLoader [main] Exceptions found in file src/main/resources/examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:40:35,916 INFO p.m.D.s.UserCSVFileLoader [main] Loading CSV file from path src/main/resources/examplefilewithexceptions.csv
+2022-01-30 11:40:36,114 INFO p.m.D.s.UserCSVFileLoader [main] CSV file loaded successful
+2022-01-30 11:40:36,122 WARN p.m.D.s.UserCSVFileLoader [main] Exceptions found in file src/main/resources/examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]

@@ -38,8 +38,13 @@ public class UserApi {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDto>> getAllUsers(){
-        return new ResponseEntity<List<UserDto>>(userService.getAllUsers(), HttpStatus.OK);
+    public ResponseEntity<List<UserDto>> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size){
+        if(page < 0 || size < 0){
+            throw new UserBadRequestException("Page and size params cannot be negative.");
+        }
+        return new ResponseEntity<List<UserDto>>(userService.getAllUsers(page, size), HttpStatus.OK);
     }
 
 }

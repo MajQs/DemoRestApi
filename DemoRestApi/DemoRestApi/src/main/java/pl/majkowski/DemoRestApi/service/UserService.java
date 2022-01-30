@@ -2,6 +2,7 @@ package pl.majkowski.DemoRestApi.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pl.majkowski.DemoRestApi.dto.UserDto;
 import pl.majkowski.DemoRestApi.entity.User;
@@ -66,10 +67,10 @@ public class UserService {
         }
     }
 
-    /* get all users from database and map them to UserDTO */
-    // TODO pagination
-    public List<UserDto> getAllUsers(){
-        return userRepository.findAll().stream()
+    /* get all users from database and map them to UserDTO
+    * TODO should count page from 0 or 1 ? */
+    public List<UserDto> getAllUsers(int page, int size){
+        return userRepository.findAll(PageRequest.of(page,size)).stream()
                 .map(user ->
                         new UserDto(
                                 user.getFirstName(),
