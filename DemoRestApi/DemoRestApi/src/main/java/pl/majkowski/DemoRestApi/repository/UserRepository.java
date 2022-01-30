@@ -4,4 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import pl.majkowski.DemoRestApi.entity.User;
 
 public interface UserRepository extends JpaRepository<User,Long> {
+
+    boolean existsByPhoneNo(Integer phoneNo);
 }

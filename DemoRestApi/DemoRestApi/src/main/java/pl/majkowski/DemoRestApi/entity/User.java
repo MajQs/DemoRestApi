@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 
@@ -31,6 +28,7 @@ public class User {
     @NotNull
     private Date birthDate;
 
+    @Column(unique = true)
     private Integer phoneNo;
 
     public User(String firstName, String lastName, Date birthDate, Integer phoneNo) {
