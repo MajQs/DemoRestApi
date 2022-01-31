@@ -81,4 +81,8 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public int getUsersCount() {
+        return userRepository.getUsersCount();
+    }
+
 }

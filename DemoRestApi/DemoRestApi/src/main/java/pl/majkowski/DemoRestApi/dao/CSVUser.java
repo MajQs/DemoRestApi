@@ -3,15 +3,17 @@ package pl.majkowski.DemoRestApi.dao;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.opencsv.bean.CsvNumber;
+import lombok.*;
 
 import java.sql.Date;
 
 @Setter
 @Getter
 @ToString
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class CSVUser {
 
     @CsvBindByName(column = "first_name", required = true)

@@ -47,4 +47,9 @@ public class UserApi {
         return new ResponseEntity<List<UserDto>>(userService.getAllUsers(page, size), HttpStatus.OK);
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<ApiResponse<String>> getUsersCount(){
+        return new ResponseEntity(new ApiResponse<String>("All users in database is: " + userService.getUsersCount(), HttpStatus.OK), HttpStatus.OK) ;
+    }
+
 }
