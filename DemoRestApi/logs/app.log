@@ -1,0 +1,189 @@
+2022-01-30 10:00:35,438 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 11356 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 10:00:35,474 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 10:00:35,476 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 10:00:43,587 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 8.971 seconds (JVM running for 12.076)
+2022-01-30 10:00:59,307 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Loading users from CSV file to database...
+2022-01-30 10:00:59,312 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 10:00:59,519 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] CSV file loaded successful
+2022-01-30 10:00:59,543 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 10:03:13,233 INFO p.m.D.s.UserService [http-nio-8080-exec-4] Loading users from CSV file to database...
+2022-01-30 10:03:13,233 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefile.csv
+2022-01-30 10:03:13,244 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] CSV file loaded successful
+2022-01-30 10:03:13,267 INFO p.m.D.s.UserService [http-nio-8080-exec-4] users saved in database successfully
+2022-01-30 10:03:24,631 INFO p.m.D.s.UserService [http-nio-8080-exec-5] Loading users from CSV file to database...
+2022-01-30 10:03:24,631 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefile.csv
+2022-01-30 10:03:24,641 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] CSV file loaded successful
+2022-01-30 10:08:21,001 INFO p.m.D.s.UserService [http-nio-8080-exec-7] Loading users from CSV file to database...
+2022-01-30 10:08:21,002 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-7] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefile.csv
+2022-01-30 10:08:21,033 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-7] CSV file loaded successful
+2022-01-30 10:08:22,835 INFO p.m.D.s.UserService [http-nio-8080-exec-9] Loading users from CSV file to database...
+2022-01-30 10:08:22,835 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-9] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefile.csv
+2022-01-30 10:08:22,844 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-9] CSV file loaded successful
+2022-01-30 10:08:35,186 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 4004 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 10:08:35,206 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 10:08:35,207 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 10:08:40,443 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.806 seconds (JVM running for 7.725)
+2022-01-30 10:08:46,201 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Loading users from CSV file to database...
+2022-01-30 10:08:46,202 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefile.csv
+2022-01-30 10:08:46,440 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] CSV file loaded successful
+2022-01-30 10:08:46,611 INFO p.m.D.s.UserService [http-nio-8080-exec-1] users saved in database successfully
+2022-01-30 10:30:32,056 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 14948 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 10:30:32,072 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 10:30:32,073 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 10:31:37,116 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 17240 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 10:31:37,127 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 10:31:37,128 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 10:31:42,119 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.692 seconds (JVM running for 7.285)
+2022-01-30 10:40:18,959 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Loading users from CSV file to database...
+2022-01-30 10:40:18,961 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 10:40:19,184 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] CSV file loaded successful
+2022-01-30 10:40:19,209 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 10:59:20,887 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 6632 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 10:59:20,907 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 10:59:20,909 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 10:59:25,966 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.699 seconds (JVM running for 7.325)
+2022-01-30 10:59:42,487 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Loading users from CSV file to database...
+2022-01-30 10:59:42,489 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 10:59:42,664 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] CSV file loaded successful
+2022-01-30 10:59:42,672 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 10:59:43,114 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Users saved in database successfully
+2022-01-30 10:59:43,114 WARN p.m.D.s.UserService [http-nio-8080-exec-2] The file contains some exceptions that were not handled
+2022-01-30 11:00:58,644 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 9084 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 11:00:58,664 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 11:00:58,667 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 11:01:03,788 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.806 seconds (JVM running for 7.437)
+2022-01-30 11:01:25,693 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Loading users from CSV file to database...
+2022-01-30 11:01:25,694 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:01:25,909 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] CSV file loaded successful
+2022-01-30 11:01:25,926 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:01:26,152 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Users saved in database successfully
+2022-01-30 11:01:26,155 WARN p.m.D.s.UserService [http-nio-8080-exec-3] The file contains some exceptions that were not handled
+2022-01-30 11:01:35,274 INFO p.m.D.s.UserService [http-nio-8080-exec-4] Loading users from CSV file to database...
+2022-01-30 11:01:35,275 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:01:35,304 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] CSV file loaded successful
+2022-01-30 11:01:35,305 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:01:35,318 INFO p.m.D.s.UserService [http-nio-8080-exec-4] Users saved in database successfully
+2022-01-30 11:01:35,318 WARN p.m.D.s.UserService [http-nio-8080-exec-4] The file contains some exceptions that were not handled
+2022-01-30 11:01:42,990 INFO p.m.D.s.UserService [http-nio-8080-exec-5] Loading users from CSV file to database...
+2022-01-30 11:01:42,990 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:01:43,004 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] CSV file loaded successful
+2022-01-30 11:01:43,005 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:01:43,011 INFO p.m.D.s.UserService [http-nio-8080-exec-5] Users saved in database successfully
+2022-01-30 11:01:43,012 WARN p.m.D.s.UserService [http-nio-8080-exec-5] The file contains some exceptions that were not handled
+2022-01-30 11:02:57,192 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 9496 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 11:02:57,206 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 11:02:57,207 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 11:03:02,197 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.748 seconds (JVM running for 7.229)
+2022-01-30 11:03:05,643 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Loading users from CSV file to database...
+2022-01-30 11:03:05,644 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:03:05,788 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] CSV file loaded successful
+2022-01-30 11:03:05,804 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:03:06,108 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Users saved in database successfully
+2022-01-30 11:03:06,108 WARN p.m.D.s.UserService [http-nio-8080-exec-2] The file contains some exceptions that were not handled
+2022-01-30 11:03:08,654 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Loading users from CSV file to database...
+2022-01-30 11:03:08,654 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:03:08,666 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] CSV file loaded successful
+2022-01-30 11:03:08,667 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:03:08,676 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Users saved in database successfully
+2022-01-30 11:03:08,676 WARN p.m.D.s.UserService [http-nio-8080-exec-3] The file contains some exceptions that were not handled
+2022-01-30 11:03:10,643 INFO p.m.D.s.UserService [http-nio-8080-exec-4] Loading users from CSV file to database...
+2022-01-30 11:03:10,644 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:03:10,655 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] CSV file loaded successful
+2022-01-30 11:03:10,655 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-4] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:03:10,661 INFO p.m.D.s.UserService [http-nio-8080-exec-4] Users saved in database successfully
+2022-01-30 11:03:10,661 WARN p.m.D.s.UserService [http-nio-8080-exec-4] The file contains some exceptions that were not handled
+2022-01-30 11:03:11,592 INFO p.m.D.s.UserService [http-nio-8080-exec-5] Loading users from CSV file to database...
+2022-01-30 11:03:11,592 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:03:11,598 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] CSV file loaded successful
+2022-01-30 11:03:11,598 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-5] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:03:11,607 INFO p.m.D.s.UserService [http-nio-8080-exec-5] Users saved in database successfully
+2022-01-30 11:03:11,607 WARN p.m.D.s.UserService [http-nio-8080-exec-5] The file contains some exceptions that were not handled
+2022-01-30 11:03:17,433 INFO p.m.D.s.UserService [http-nio-8080-exec-6] Loading users from CSV file to database...
+2022-01-30 11:03:17,433 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-6] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:03:17,440 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-6] CSV file loaded successful
+2022-01-30 11:03:17,441 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-6] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:03:17,449 INFO p.m.D.s.UserService [http-nio-8080-exec-6] Users saved in database successfully
+2022-01-30 11:03:17,449 WARN p.m.D.s.UserService [http-nio-8080-exec-6] The file contains some exceptions that were not handled
+2022-01-30 11:25:12,154 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 14884 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 11:25:12,187 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 11:25:12,189 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 11:25:17,237 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.747 seconds (JVM running for 7.318)
+2022-01-30 11:25:36,781 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Loading users from CSV file to database...
+2022-01-30 11:25:36,784 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:25:37,053 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] CSV file loaded successful
+2022-01-30 11:25:37,068 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:25:37,216 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Users saved in database successfully
+2022-01-30 11:25:37,216 WARN p.m.D.s.UserService [http-nio-8080-exec-3] The file contains some exceptions that were not handled
+2022-01-30 11:28:53,153 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 1372 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 11:28:53,168 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 11:28:53,169 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 11:28:58,278 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.826 seconds (JVM running for 7.615)
+2022-01-30 11:29:06,542 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Loading users from CSV file to database...
+2022-01-30 11:29:06,543 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:29:06,823 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] CSV file loaded successful
+2022-01-30 11:29:06,829 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:29:07,274 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Users saved in database successfully
+2022-01-30 11:29:07,274 WARN p.m.D.s.UserService [http-nio-8080-exec-1] The file contains some exceptions that were not handled
+2022-01-30 11:30:46,180 INFO p.m.D.s.UserService [http-nio-8080-exec-7] Loading users from CSV file to database...
+2022-01-30 11:30:46,180 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-7] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:30:46,196 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-7] CSV file loaded successful
+2022-01-30 11:30:46,196 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-7] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:30:46,211 INFO p.m.D.s.UserService [http-nio-8080-exec-7] Users saved in database successfully
+2022-01-30 11:30:46,212 WARN p.m.D.s.UserService [http-nio-8080-exec-7] The file contains some exceptions that were not handled
+2022-01-30 11:31:06,382 INFO p.m.D.s.UserService [http-nio-8080-exec-9] Loading users from CSV file to database...
+2022-01-30 11:31:06,382 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-9] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:31:06,400 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-9] CSV file loaded successful
+2022-01-30 11:31:06,401 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-9] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:31:06,414 INFO p.m.D.s.UserService [http-nio-8080-exec-9] Users saved in database successfully
+2022-01-30 11:31:06,415 WARN p.m.D.s.UserService [http-nio-8080-exec-9] The file contains some exceptions that were not handled
+2022-01-30 11:40:57,986 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 15072 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 11:40:58,033 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 11:40:58,036 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 11:41:07,432 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 10.485 seconds (JVM running for 12.567)
+2022-01-30 11:41:16,867 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Loading users from CSV file to database...
+2022-01-30 11:41:16,869 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:41:17,038 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] CSV file loaded successful
+2022-01-30 11:41:17,044 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 4: Field 'firstName' is mandatory but no value was provided., Line 4: Field 'lastName' is mandatory but no value was provided., Line 4: Field 'birthDate' is mandatory but no value was provided., Line 6: Number of data fields does not match number of headers., Line 8: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:41:17,338 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Users saved in database successfully
+2022-01-30 11:41:17,338 WARN p.m.D.s.UserService [http-nio-8080-exec-2] The file contains some exceptions that were not handled
+2022-01-30 11:49:31,458 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Loading users from CSV file to database...
+2022-01-30 11:49:31,459 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:49:31,475 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] CSV file loaded successful
+2022-01-30 11:49:31,475 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-1] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 5: Field 'firstName' is mandatory but no value was provided., Line 5: Field 'lastName' is mandatory but no value was provided., Line 5: Field 'birthDate' is mandatory but no value was provided., Line 7: Number of data fields does not match number of headers., Line 9: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:49:31,487 INFO p.m.D.s.UserService [http-nio-8080-exec-1] Users saved in database successfully
+2022-01-30 11:49:31,487 WARN p.m.D.s.UserService [http-nio-8080-exec-1] The file contains some exceptions that were not handled
+2022-01-30 11:49:36,680 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Loading users from CSV file to database...
+2022-01-30 11:49:36,680 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 11:49:36,687 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] CSV file loaded successful
+2022-01-30 11:49:36,688 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-2] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 5: Field 'firstName' is mandatory but no value was provided., Line 5: Field 'lastName' is mandatory but no value was provided., Line 5: Field 'birthDate' is mandatory but no value was provided., Line 7: Number of data fields does not match number of headers., Line 9: Conversion of - to java.lang.Integer failed.]
+2022-01-30 11:49:36,697 INFO p.m.D.s.UserService [http-nio-8080-exec-2] Users saved in database successfully
+2022-01-30 11:49:36,698 WARN p.m.D.s.UserService [http-nio-8080-exec-2] The file contains some exceptions that were not handled
+2022-01-30 16:21:05,515 INFO p.m.D.DemoRestApiApplication [main] Starting DemoRestApiApplication using Java 17.0.1 on DESKTOP-9I824U3 with PID 11208 (E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\target\classes started by MajQs-Lenovo in E:\GitHub\DemoRestApi\DemoRestApi)
+2022-01-30 16:21:05,531 DEBUG p.m.D.DemoRestApiApplication [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-01-30 16:21:05,532 INFO p.m.D.DemoRestApiApplication [main] No active profile set, falling back to default profiles: default
+2022-01-30 16:21:10,813 INFO p.m.D.DemoRestApiApplication [main] Started DemoRestApiApplication in 5.866 seconds (JVM running for 7.669)
+2022-01-30 16:21:27,139 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Loading users from CSV file to database...
+2022-01-30 16:21:27,142 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Loading CSV file from path E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+2022-01-30 16:21:27,363 INFO p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] CSV file loaded successful
+2022-01-30 16:21:27,429 WARN p.m.D.s.UserCSVFileLoader [http-nio-8080-exec-3] Exceptions found in file E:\GitHub\DemoRestApi\DemoRestApi\DemoRestApi\src\main\resources\examplefilewithexceptions.csv
+[Line 3: Number of data fields does not match number of headers., Line 5: Field 'firstName' is mandatory but no value was provided., Line 5: Field 'lastName' is mandatory but no value was provided., Line 5: Field 'birthDate' is mandatory but no value was provided., Line 7: Number of data fields does not match number of headers., Line 9: Conversion of - to java.lang.Integer failed.]
+2022-01-30 16:21:27,756 INFO p.m.D.s.UserService [http-nio-8080-exec-3] Users saved in database successfully
+2022-01-30 16:21:27,757 WARN p.m.D.s.UserService [http-nio-8080-exec-3] The file contains some exceptions that were not handled
