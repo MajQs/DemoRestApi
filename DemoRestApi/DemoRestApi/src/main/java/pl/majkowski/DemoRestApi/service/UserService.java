@@ -3,10 +3,13 @@ package pl.majkowski.DemoRestApi.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import pl.majkowski.DemoRestApi.dto.UserAgeDTO;
 import pl.majkowski.DemoRestApi.dto.UserDto;
 import pl.majkowski.DemoRestApi.entity.User;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileContentException;
+import pl.majkowski.DemoRestApi.exception.UserNotFoundException;
 import pl.majkowski.DemoRestApi.repository.UserRepository;
 
 import java.util.ArrayList;
@@ -67,12 +70,20 @@ public class UserService {
         }
     }
 
+
+    //TODO
+    public User addUser(User user){
+        System.out.println(user.toString());
+        return user;
+    }
+
     /* get all users from database and map them to UserDTO
     * TODO should count page from 0 or 1 ? */
     public List<UserDto> getAllUsers(int page, int size){
         return userRepository.findAll(PageRequest.of(page,size)).stream()
                 .map(user ->
                         new UserDto(
+                                user.getUserId(),
                                 user.getFirstName(),
                                 user.getLastName(),
                                 user.getBirthDate(),
@@ -81,8 +92,37 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public UserAgeDTO getOldestUserWithPhone(){
+        User user = userRepository.getOldestUserWithPhoneNo();
+        return new UserAgeDTO(user.getUserId(),
+                user.getFirstName(),
+                user.getLastName(),
+                CalenderFormatter.getAge(user.getBirthDate()),
+                user.getPhoneNo());
+    }
+
     public int getUsersCount() {
         return userRepository.getUsersCount();
     }
+
+    public void deleteUser(Long userId){
+        logger.info("Deleting user with id = " + userId + " ... ");
+        if(userRepository.existsById(userId)){
+            userRepository.deleteById(userId);
+            logger.info("UserId = " + userId + " has been deleted successfully");
+        }else{
+            logger.warn("Not found user with userId = " + userId);
+            throw new UserNotFoundException("Not found user with userId = " + userId);
+        }
+    }
+
+    /*TODO: should I add any exceptions or verifications here?
+    *  for example if database is empty throw NothingToDeleteException? */
+    public void deleteAll(){
+        logger.info("Deleting all users from database...");
+        userRepository.deleteAll();
+        logger.info("All users has been deleted from database successfully");
+    }
+
 
 }

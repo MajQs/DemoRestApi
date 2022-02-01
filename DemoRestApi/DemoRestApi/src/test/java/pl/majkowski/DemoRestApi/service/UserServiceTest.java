@@ -13,9 +13,11 @@ import org.springframework.data.domain.PageRequest;
 import pl.majkowski.DemoRestApi.entity.User;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileContentException;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileNotFoundException;
+import pl.majkowski.DemoRestApi.exception.UserNotFoundException;
 import pl.majkowski.DemoRestApi.repository.UserRepository;
 
 import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -36,9 +38,9 @@ class UserServiceTest {
     @Test
     void shouldReturnThreeUsers(){
         List<User> userList = List.of(
-                new User(Long.valueOf(1),"Stefan","Testowy", Date.valueOf("1988-11-11"),600700800),
-                new User(Long.valueOf(2), "Maria","Ziółko", Date.valueOf("1999-1-1"),555666777),
-                new User(Long.valueOf(3),"Marian","Kowalewski", Date.valueOf("1950-10-01"),670540120)
+                new User(1L,"Stefan","Testowy", Date.valueOf("1988-11-11"),600700800),
+                new User(2L, "Maria","Ziółko", Date.valueOf("1999-1-1"),555666777),
+                new User(3L,"Marian","Kowalewski", Date.valueOf("1950-10-01"),670540120)
         );
 
         Page<User> page = new PageImpl<User>(userList);
@@ -90,4 +92,47 @@ class UserServiceTest {
         });
     }
 
+    @Test
+    void getOldestUserWithPhoneShouldReturnAgeTwenty(){
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.YEAR, -20);
+
+        when(userRepository.getOldestUserWithPhoneNo()).thenReturn(new User("Ala","Kot",new Date(cal.getTimeInMillis()),222888555));
+        assertEquals(20,userService.getOldestUserWithPhone().getAge());
+    }
+    @Test
+    void getOldestUserWithPhoneShouldReturnAgeNineteen(){
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.YEAR, -20);
+        cal.add(Calendar.MONTH, 1);
+
+        when(userRepository.getOldestUserWithPhoneNo()).thenReturn(new User("Ala","Kot",new Date(cal.getTimeInMillis()),222888555));
+        assertEquals(19,userService.getOldestUserWithPhone().getAge());
+    }
+
+    @Test
+    void deletingUserIDOneShouldReturnOK(){
+        when(userRepository.existsById(1L)).thenReturn(true);
+        userService.deleteUser(1L);
+        verify(userRepository,times(1)).deleteById(1L);
+    }
+
+    @Test
+    void deletingUserIdOneShouldInvokeDeleteByIdOne(){
+        when(userRepository.existsById(1L)).thenReturn(true);
+        userService.deleteUser(1L);
+        verify(userRepository,times(1)).deleteById(1L);
+    }
+
+    @Test
+    void deletingNotExistingUserIdShouldThrowNotFoundException(){
+        when(userRepository.existsById(1L)).thenReturn(false);
+        assertThrows(UserNotFoundException.class, () -> userService.deleteUser(1L));
+    }
+
+    @Test
+    void deletingAllShouldInvokeDeleteAll(){
+        userService.deleteAll();
+        verify(userRepository,times(1)).deleteAll();
+    }
 }

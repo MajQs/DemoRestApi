@@ -1,10 +1,7 @@
 package pl.majkowski.DemoRestApi.entity;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -13,22 +10,28 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@EqualsAndHashCode
+@ToString
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userid")
     private Long userId;
 
     @NotNull
+    @Column(name = "firstname")
     private String firstName;
 
     @NotNull
+    @Column(name = "lastname")
     private String lastName;
 
     @NotNull
+    @Column(name = "birthdate")
     private Date birthDate;
 
-    @Column(unique = true)
+    @Column(unique = true,name = "phoneno")
     private Integer phoneNo;
 
     public User(String firstName, String lastName, Date birthDate, Integer phoneNo) {

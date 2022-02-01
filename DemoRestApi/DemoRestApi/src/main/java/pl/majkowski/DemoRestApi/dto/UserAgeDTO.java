@@ -7,11 +7,11 @@ import java.sql.Date;
 
 @Getter
 @AllArgsConstructor
-public class UserDto {
+public class UserAgeDTO {
 
     private Long userId;
     private String name;
     private String surename;
-    private Date birth_day;
+    private Integer age;
     private Integer phone_number;
 }

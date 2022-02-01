@@ -11,4 +11,16 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Query(value = "SELECT count(*) FROM User",
             nativeQuery = true)
     int getUsersCount();
+
+    @Query(value = "SELECT * " +
+            "FROM User " +
+            "WHERE phoneno is not null " +
+            "ORDER BY birthdate " +
+            "LIMIT 1",
+            nativeQuery = true)
+    User getOldestUserWithPhoneNo();
+
 }
+
+
+
