@@ -1,5 +1,6 @@
 # DemoRestApi
 Demo application how to use REST controllers with simple H2 database.
+
 Extended to load data from .csv files.
 Example .csv files are in src\main\resources
 
