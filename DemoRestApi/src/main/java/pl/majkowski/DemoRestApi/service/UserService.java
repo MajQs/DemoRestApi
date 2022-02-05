@@ -143,6 +143,7 @@ public class UserService {
     }
 
 
+
     public UserDto getUserById(Long userId) {
         if(userRepository.existsById(userId)){
             return userRepository.findById(userId).stream()
@@ -156,6 +157,5 @@ public class UserService {
         }else{
             throw new UserNotFoundException("Not found user with userId = " + userId);
         }
-
     }
 }
