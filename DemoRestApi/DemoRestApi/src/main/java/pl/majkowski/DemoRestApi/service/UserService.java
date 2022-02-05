@@ -4,9 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import pl.majkowski.DemoRestApi.dto.UserAgeDTO;
 import pl.majkowski.DemoRestApi.dto.UserDto;
 import pl.majkowski.DemoRestApi.entity.User;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileContentException;
+import pl.majkowski.DemoRestApi.exception.UserNotFoundException;
 import pl.majkowski.DemoRestApi.repository.UserRepository;
 
 import java.util.ArrayList;
@@ -48,13 +50,25 @@ public class UserService {
             userExceptionList.addAll(userCSVFileLoader.getExceptions());
         }
 
-        // validate if PhoneNo already exist and save user to database
-        // If yes -> add exception to userExceptionList
+
         userList.stream().forEach(user ->{
-            if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
-                userExceptionList.add("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
-            }else{
-                userRepository.save(user);
+            try{
+                // validate entries for user
+                user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
+                user.setLastName(UserValidation.getLastName(user.getLastName()));
+                user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
+                user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
+
+                // validate if PhoneNo already exist and save user to database
+                // If phoneNo exist -> add exception to userExceptionList
+                if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
+                    userExceptionList.add("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
+                }else{
+                    userRepository.save(user);
+                }
+            //catch exceptions for UserValidation entries
+            }catch (IllegalArgumentException e){
+                userExceptionList.add("Error while validating user entries: " + e.getMessage() + " for " + user.toString());
             }
         });
 
@@ -62,9 +76,27 @@ public class UserService {
 
         // throw exception if there is something
         if(!userExceptionList.isEmpty()){
-            logger.warn("The file contains some exceptions that were not handled");
+            logger.warn("The file contains some exceptions that were not handled " + userExceptionList);
             throw new UserCSVFileContentException("The file contains some exceptions that were not handled",userExceptionList);
         }
+    }
+
+
+    public User addUser(User user){
+        logger.info("Creating new user: " + user.toString());
+        try{
+            user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
+            user.setLastName(UserValidation.getLastName(user.getLastName()));
+            user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
+            user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
+        }catch (IllegalArgumentException e){
+            logger.error("Error while validating user entries: " + e.getMessage());
+            throw new IllegalArgumentException(e.getMessage());
+        }
+
+        userRepository.save(user);
+        logger.info("User created userId=" + user.getUserId());
+        return user;
     }
 
     /* get all users from database and map them to UserDTO
@@ -73,6 +105,7 @@ public class UserService {
         return userRepository.findAll(PageRequest.of(page,size)).stream()
                 .map(user ->
                         new UserDto(
+                                user.getUserId(),
                                 user.getFirstName(),
                                 user.getLastName(),
                                 user.getBirthDate(),
@@ -81,8 +114,37 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public UserAgeDTO getOldestUserWithPhone(){
+        User user = userRepository.getOldestUserWithPhoneNo();
+        return new UserAgeDTO(user.getUserId(),
+                user.getFirstName(),
+                user.getLastName(),
+                CalenderFormatter.getAge(user.getBirthDate()),
+                user.getPhoneNo());
+    }
+
     public int getUsersCount() {
         return userRepository.getUsersCount();
     }
+
+    public void deleteUser(Long userId){
+        logger.info("Deleting user with id = " + userId + " ... ");
+        if(userRepository.existsById(userId)){
+            userRepository.deleteById(userId);
+            logger.info("UserId = " + userId + " has been deleted successfully");
+        }else{
+            logger.warn("Not found user with userId = " + userId);
+            throw new UserNotFoundException("Not found user with userId = " + userId);
+        }
+    }
+
+    /*TODO: should I add any exceptions or verifications here?
+    *  for example if database is empty throw NothingToDeleteException? */
+    public void deleteAll(){
+        logger.info("Deleting all users from database...");
+        userRepository.deleteAll();
+        logger.info("All users has been deleted from database successfully");
+    }
+
 
 }
