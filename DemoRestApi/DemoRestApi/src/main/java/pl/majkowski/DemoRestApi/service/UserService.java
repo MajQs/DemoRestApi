@@ -147,4 +147,19 @@ public class UserService {
     }
 
 
+    public UserDto getUserById(Long userId) {
+        if(userRepository.existsById(userId)){
+            return userRepository.findById(userId).stream()
+                    .map(user -> new UserDto(
+                            user.getUserId(),
+                            user.getFirstName(),
+                            user.getLastName(),
+                            user.getBirthDate(),
+                            user.getPhoneNo()
+                    )).findFirst().get();
+        }else{
+            throw new UserNotFoundException("Not found user with userId = " + userId);
+        }
+
+    }
 }
