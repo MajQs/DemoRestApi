@@ -10,6 +10,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import pl.majkowski.DemoRestApi.dto.UserAgeDTO;
+import pl.majkowski.DemoRestApi.dto.UserDto;
 import pl.majkowski.DemoRestApi.entity.User;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileContentException;
 import pl.majkowski.DemoRestApi.exception.UserCSVFileNotFoundException;
@@ -19,6 +21,8 @@ import pl.majkowski.DemoRestApi.repository.UserRepository;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
@@ -134,5 +138,26 @@ class UserServiceTest {
     void deletingAllShouldInvokeDeleteAll(){
         userService.deleteAll();
         verify(userRepository,times(1)).deleteAll();
+    }
+
+    @Test
+    void getUserByIdShouldReturnUserDTO(){
+        User user = new User(4L, "name", "lastname", Date.valueOf("2021-12-12"), null);
+
+        when(userRepository.existsById(4L)).thenReturn(true);
+        when(userRepository.findById(4L)).thenReturn(Optional.of(user));
+
+        UserDto result = userService.getUserById(4L);
+        assertEquals(user.getFirstName(),result.getName());
+        assertEquals(user.getLastName(),result.getSurename());
+        assertEquals(user.getBirthDate(),result.getBirth_day());
+        assertEquals(user.getPhoneNo(),result.getPhone_number());
+    }
+
+    @Test
+    void getUserByIdShouldReturnNotFoundException(){
+        assertThrows(UserNotFoundException.class, ()->{
+            userService.getUserById(4L);
+        });
     }
 }
