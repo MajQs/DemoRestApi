@@ -50,22 +50,9 @@ public class UserService {
             userExceptionList.addAll(userCSVFileLoader.getExceptions());
         }
 
-
         userList.stream().forEach(user ->{
             try{
-                // validate entries for user
-                user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
-                user.setLastName(UserValidation.getLastName(user.getLastName()));
-                user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
-                user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
-
-                // validate if PhoneNo already exist and save user to database
-                // If phoneNo exist -> add exception to userExceptionList
-                if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
-                    userExceptionList.add("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
-                }else{
-                    userRepository.save(user);
-                }
+                addUser(user);
             //catch exceptions for UserValidation entries
             }catch (IllegalArgumentException e){
                 userExceptionList.add("Error while validating user entries: " + e.getMessage() + " for " + user.toString());
@@ -85,10 +72,19 @@ public class UserService {
     public User addUser(User user){
         logger.info("Creating new user: " + user.toString());
         try{
+            // validate entries for user
             user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
             user.setLastName(UserValidation.getLastName(user.getLastName()));
             user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
             user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
+
+            // validate if PhoneNo already exist and save user to database
+            // If phoneNo exist -> add exception to userExceptionList
+            if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
+                throw new IllegalArgumentException("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
+            }else{
+                userRepository.save(user);
+            }
         }catch (IllegalArgumentException e){
             logger.error("Error while validating user entries: " + e.getMessage());
             throw new IllegalArgumentException(e.getMessage());

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -23,8 +24,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,8 +36,10 @@ class UserServiceTest {
     @Mock
     private UserRepository userRepository;
 
+    @Spy
     @InjectMocks
     private UserService userService;
+
 
     @Test
     void shouldReturnThreeUsers(){
@@ -55,24 +57,51 @@ class UserServiceTest {
 
 
     @Test
-    void loadingDefaultPathShouldSaveFiveUsersToDatabase(){
+    void loadingDefaultPathShouldCallFiveTimesAddUser(){
         userService.loadUsersFromCSVFileToDatabase(path);
-        verify(userRepository, times(5)).save(any(User.class));
+        verify(userService, times(5)).addUser(any(User.class));
     }
 
     @Test
-    void loadingExceptionPathShouldSaveFiveUsersToDatabase(){
+    void loadingDefaultPathShouldCallSixTimesAddUserAndThrowException(){
         assertThrows(UserCSVFileContentException.class,() -> {
             userService.loadUsersFromCSVFileToDatabase(pathExceptions);
         });
-        verify(userRepository, times(5)).save(any(User.class));
+        verify(userService, times(6)).addUser(any(User.class));
     }
     @Test
-
     void loadingDefaultPathShouldReturnFiveAsCount(){
         when(userRepository.getUsersCount()).thenReturn(5);
         assertEquals(5,userService.getUsersCount());
     }
+
+    @Test
+    void addUserShouldReturnUser(){
+        User user = new User("Ala","Kot",Date.valueOf("2012-04-03"),222888555);
+        when(userRepository.existsByPhoneNo(user.getPhoneNo())).thenReturn(false);
+        when(userRepository.save(user)).thenReturn(user);
+        assertEquals(user,userService.addUser(user));
+    }
+
+    @Test
+    void existingPhoneNoShouldReturnException(){
+        User user = new User("Ala","Kot",Date.valueOf("2012-04-03"),222888555);
+        when(userRepository.existsByPhoneNo(user.getPhoneNo())).thenReturn(true);
+        assertThrows(IllegalArgumentException.class,() -> {userService.addUser(user);});
+    }
+
+    @Test
+    void tooLongPhoneNoShouldReturnException(){
+        User user = new User("Ala","Kot",Date.valueOf("2012-04-03"),1122888555);
+        Exception exception = assertThrows(IllegalArgumentException.class,() -> {userService.addUser(user);});
+        String expectedMessage = "The phone number should consist of 9 digits";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+
+
+
 
     @Test
     void loadingNotExistingPathShouldReturnNotFoundException(){

@@ -6,16 +6,17 @@ import java.util.regex.Pattern;
 public class UserValidation {
 
     private static String generateName(String name){
-        name = name.replaceAll(" ","").toLowerCase();
-        if(name.isEmpty() ){
+        String correctedName = name;
+        correctedName = correctedName.replaceAll(" ","").toLowerCase();
+        if(correctedName.isEmpty() ){
             throw new IllegalArgumentException("Name parameter can't be empty");
         }
         Pattern pattern = Pattern.compile("[^a-zżźćńółęąś]", Pattern.CASE_INSENSITIVE);
-        if(pattern.matcher(name).find()){
+        if(pattern.matcher(correctedName).find()){
             throw new IllegalArgumentException("Name contains illegal letter. Entered value = " + name);
         }
-        name = name.substring(0, 1).toUpperCase() + name.substring(1);
-        return name;
+        correctedName = correctedName.substring(0, 1).toUpperCase() + correctedName.substring(1);
+        return correctedName;
     }
 
     public static String getFirstName(String firstName){
@@ -27,7 +28,7 @@ public class UserValidation {
 
     public static String getLastName(String lastName){
         if(lastName == null ){
-            throw new IllegalArgumentException("LastName can't be null");
+            throw new IllegalArgumentException("lastName can't be null");
         }
         return generateName(lastName);
     }
