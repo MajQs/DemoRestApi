@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

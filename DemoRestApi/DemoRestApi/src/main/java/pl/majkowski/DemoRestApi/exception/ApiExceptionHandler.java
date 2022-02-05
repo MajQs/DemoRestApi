@@ -1,7 +1,5 @@
 package pl.majkowski.DemoRestApi.exception;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -52,7 +50,7 @@ public class ApiExceptionHandler {
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<ApiException<String>> userNotFoundException(HttpMessageNotReadableException e){
+    public ResponseEntity<ApiException<String>> httpMessageNotReadableException(HttpMessageNotReadableException e){
         HttpStatus httpstatus = HttpStatus.BAD_REQUEST;
         return new ResponseEntity<>(ApiException.<String>builder()
                 .httpStatus(httpstatus)
@@ -60,4 +58,14 @@ public class ApiExceptionHandler {
                 .additionalContent(e.getMessage())
                 .build(),httpstatus);
     }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiException<String>> illegalArgumentException(IllegalArgumentException e){
+        HttpStatus httpstatus = HttpStatus.BAD_REQUEST;
+        return new ResponseEntity<>(ApiException.<String>builder()
+                .httpStatus(httpstatus)
+                .message(e.getMessage())
+                .build(),httpstatus);
+    }
+
+
 }

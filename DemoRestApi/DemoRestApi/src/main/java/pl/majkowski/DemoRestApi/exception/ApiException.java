@@ -15,18 +15,4 @@ public class ApiException<T>  {
     private final ZonedDateTime timestamp = ZonedDateTime.now();
     private final String message;
     private T additionalContent;
-/*
-    public ApiException(String message, HttpStatus httpStatus, ZonedDateTime timestamp) {
-        this.message = message;
-        this.httpStatus = httpStatus;
-        this.timestamp = timestamp;
-    }
-
-    public ApiException(String message, HttpStatus httpStatus, ZonedDateTime timestamp, T additionalContent) {
-        this.message = message;
-        this.httpStatus = httpStatus;
-        this.timestamp = timestamp;
-        this.additionalContent = additionalContent;
-    }*/
-
 }

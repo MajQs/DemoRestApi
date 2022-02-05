@@ -3,8 +3,6 @@ package pl.majkowski.DemoRestApi.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.sql.Date;
-
 @Getter
 @AllArgsConstructor
 public class UserAgeDTO {

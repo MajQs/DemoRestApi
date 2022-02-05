@@ -61,7 +61,7 @@ class UserServiceTest {
         assertThrows(UserCSVFileContentException.class,() -> {
             userService.loadUsersFromCSVFileToDatabase(pathExceptions);
         });
-        verify(userRepository, times(6)).save(any(User.class));
+        verify(userRepository, times(5)).save(any(User.class));
     }
     @Test
 

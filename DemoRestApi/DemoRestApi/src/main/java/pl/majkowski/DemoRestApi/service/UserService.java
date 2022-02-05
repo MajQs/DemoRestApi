@@ -3,7 +3,6 @@ package pl.majkowski.DemoRestApi.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import pl.majkowski.DemoRestApi.dto.UserAgeDTO;
 import pl.majkowski.DemoRestApi.dto.UserDto;
@@ -51,13 +50,25 @@ public class UserService {
             userExceptionList.addAll(userCSVFileLoader.getExceptions());
         }
 
-        // validate if PhoneNo already exist and save user to database
-        // If yes -> add exception to userExceptionList
+
         userList.stream().forEach(user ->{
-            if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
-                userExceptionList.add("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
-            }else{
-                userRepository.save(user);
+            try{
+                // validate entries for user
+                user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
+                user.setLastName(UserValidation.getLastName(user.getLastName()));
+                user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
+                user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
+
+                // validate if PhoneNo already exist and save user to database
+                // If phoneNo exist -> add exception to userExceptionList
+                if(user.getPhoneNo() != null && userRepository.existsByPhoneNo(user.getPhoneNo())){
+                    userExceptionList.add("Cant add user to database. Phone number already exist : " + user.getPhoneNo());
+                }else{
+                    userRepository.save(user);
+                }
+            //catch exceptions for UserValidation entries
+            }catch (IllegalArgumentException e){
+                userExceptionList.add("Error while validating user entries: " + e.getMessage() + " for " + user.toString());
             }
         });
 
@@ -65,15 +76,26 @@ public class UserService {
 
         // throw exception if there is something
         if(!userExceptionList.isEmpty()){
-            logger.warn("The file contains some exceptions that were not handled");
+            logger.warn("The file contains some exceptions that were not handled " + userExceptionList);
             throw new UserCSVFileContentException("The file contains some exceptions that were not handled",userExceptionList);
         }
     }
 
 
-    //TODO
     public User addUser(User user){
-        System.out.println(user.toString());
+        logger.info("Creating new user: " + user.toString());
+        try{
+            user.setFirstName(UserValidation.getFirstName(user.getFirstName()));
+            user.setLastName(UserValidation.getLastName(user.getLastName()));
+            user.setBirthDate(UserValidation.getBirthDate(user.getBirthDate()));
+            user.setPhoneNo(UserValidation.getPhoneNo(user.getPhoneNo()));
+        }catch (IllegalArgumentException e){
+            logger.error("Error while validating user entries: " + e.getMessage());
+            throw new IllegalArgumentException(e.getMessage());
+        }
+
+        userRepository.save(user);
+        logger.info("User created userId=" + user.getUserId());
         return user;
     }
 
